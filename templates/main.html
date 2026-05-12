@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="card">
+        <h1>House Price Predictor</h1>
+        <form method="POST">
+            <input type="number" name="area" placeholder="Area" min="0" required>
+            <input type="number" name="bedrooms" placeholder="Bedrooms" min="0" required>
+            <input type="number" name="bathrooms" placeholder="Bathrooms" min="0" required>
+            <input type="number" name="age" placeholder=" House age" min="0" required>
+            <button type="submit">Predict Price</button>
+        </form>
+        {% if prediction %}
+        <div class="result">
+            Estimated Price:
+            <span>${{ "{:,.2f}".format(prediction) }}</span>
+        </div>
+        {% endif %}
+    </div>
+    <script src="/static/script.js"></script>
+    
+</body>
+</html>
