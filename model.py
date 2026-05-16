@@ -40,6 +40,3 @@ torch.save({
 # save 
 joblib.dump(model,"model.pkl")
 print("model trained successfully")
-print(loss)
-print(pred)
-print(Y)
